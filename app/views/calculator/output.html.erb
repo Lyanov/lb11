@@ -1,0 +1,26 @@
+
+<% if @result != 'There is no data or the data is incorrect'%>
+<div class="container">
+    <h1>Результаты вычислений</h1>
+<table class="table table-striped">
+  <thead>
+  <th scope="col">#</th>
+  <th scope="col">Value</th>
+  </thead>
+  <tbody>
+  <% @result.each_with_index do |elem, index| %>
+  <tr>
+    <th scope="row"><%= index+1 %></th>
+    <td><%= elem %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+<% else %>
+<h2><%= @result %></h2>
+<% end %>
+
+<%= form_tag('/calculator/input', :method => 'get') do %>
+    <%= submit_tag('Назад', class: 'btn btn-primary') %>
+<% end %>
+</div>

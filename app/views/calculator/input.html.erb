@@ -1,0 +1,13 @@
+<div class="container">
+<h1> Lab 11 </h1>
+
+<%= form_tag('/calculator/output', :method => 'get') do %>
+
+    <!--<%= label_tag('Введите N') %> <br> -->
+    <div class="form-row">
+    <h3><%=text_field_tag(:param, nil, placeholder: 'введите количество разрядов', class: 'form-control col') %> </h3>
+    </div>
+    <h3><%=submit_tag('Calculate', class: 'btn btn-primary')%> </h3>
+
+<%end%>
+</div>
